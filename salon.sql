@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 12.17 (Ubuntu 12.17-1.pgdg22.04+1)
--- Dumped by pg_dump version 12.17 (Ubuntu 12.17-1.pgdg22.04+1)
+-- Dumped from database version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
+-- Dumped by pg_dump version 12.9 (Ubuntu 12.9-2.pgdg20.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -58,10 +58,10 @@ CREATE TABLE public.appointments (
 ALTER TABLE public.appointments OWNER TO freecodecamp;
 
 --
--- Name: appointments_appointment_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+-- Name: appointments_appoiment_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
 --
 
-CREATE SEQUENCE public.appointments_appointment_id_seq
+CREATE SEQUENCE public.appointments_appoiment_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -70,13 +70,13 @@ CREATE SEQUENCE public.appointments_appointment_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.appointments_appointment_id_seq OWNER TO freecodecamp;
+ALTER TABLE public.appointments_appoiment_id_seq OWNER TO freecodecamp;
 
 --
--- Name: appointments_appointment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+-- Name: appointments_appoiment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
-ALTER SEQUENCE public.appointments_appointment_id_seq OWNED BY public.appointments.appointment_id;
+ALTER SEQUENCE public.appointments_appoiment_id_seq OWNED BY public.appointments.appointment_id;
 
 
 --
@@ -152,7 +152,7 @@ ALTER SEQUENCE public.services_service_id_seq OWNED BY public.services.service_i
 -- Name: appointments appointment_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
-ALTER TABLE ONLY public.appointments ALTER COLUMN appointment_id SET DEFAULT nextval('public.appointments_appointment_id_seq'::regclass);
+ALTER TABLE ONLY public.appointments ALTER COLUMN appointment_id SET DEFAULT nextval('public.appointments_appoiment_id_seq'::regclass);
 
 
 --
@@ -173,12 +173,15 @@ ALTER TABLE ONLY public.services ALTER COLUMN service_id SET DEFAULT nextval('pu
 -- Data for Name: appointments; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.appointments VALUES (7, 6, 3, '11:30');
+INSERT INTO public.appointments VALUES (8, 6, 3, '11');
 
 
 --
 -- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.customers VALUES (6, '555-555-5555', 'Fabio');
 
 
 --
@@ -191,17 +194,17 @@ INSERT INTO public.services VALUES (3, 'waxing');
 
 
 --
--- Name: appointments_appointment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
+-- Name: appointments_appoiment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.appointments_appointment_id_seq', 6, true);
+SELECT pg_catalog.setval('public.appointments_appoiment_id_seq', 8, true);
 
 
 --
 -- Name: customers_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.customers_customer_id_seq', 5, true);
+SELECT pg_catalog.setval('public.customers_customer_id_seq', 6, true);
 
 
 --
@@ -262,4 +265,3 @@ ALTER TABLE ONLY public.appointments
 --
 -- PostgreSQL database dump complete
 --
-
